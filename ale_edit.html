@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="Addressing Attribute Leakages in Diffusion-based Image Editing without Training">
+  <meta name="twitter:description" content="The project page of addressing attri">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Addressing Attribute Leakages in Diffusion-based Image Editing without Training</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+
+  <style>
+    a.jx-knightlab {
+      display: none;
+    }
+  </style>
+
+</head>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Addressing Attribute Leakages in Diffusion-based Image Editing without Training
+            </h1>
+            <!-- <p class="title is-4 publication-title">CVPR 2024</p> -->
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">Sunung Mun<sup>*</sup>,</span>
+              <span class="author-block">Jinhwan Nam<sup>*</sup>,</span>
+              <span class="author-block">Sunghyun Cho</sup>,</span>
+              <span class="author-block">Jungseul Ok</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Pohang University of Science and Technology (POSTECH)</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup> Equal Contribuion</small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2412.04715" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                  <a href="static/pdfs/cvpr24_medbn_poster_final.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Poster</span>
+                  </a>
+                </span> -->
+
+                <!-- Github link -->
+                <!-- <span class="link-block">
+                  <a href="https://github.com/ml-postech/MedBN-robust-test-time-adaptation" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+
+
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=MZZ2iW9jeuM"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+
+              </div>
+            </div>
+            <div class="content has-text-justified">
+              <p>
+                Our method, <strong>A</strong>ttribute-<strong>LE</strong>akage-free <strong>Edit</strong>ing (<strong>ALE-Edit</strong>), addresses attribute leakage in diffusion-based image editing, where unintended modifications affect non-target or target regions.
+                ALE-Edit incorporates three key components: 
+                (1) Object-Restricted Embeddings for localized attribute handling, 
+                (2) Region-Guided Blending for precise attention alignment, 
+                and (3) Background Blending to preserve unedited regions. 
+                Additionally, we introduce ALE-Bench, a benchmark for evaluating attribute leakage with novel metrics. 
+                Experiments show that ALE-Edit significantly reduces leakage while maintaining high-quality and efficient multi-object image editing.
+                The demo code and benchmark will be publicly released.
+                <!-- Our code is available at https://github.com/mlpostech/MedBN-robust-test-time-adaptation. -->
+              </p>
+            </div>
+        <!-- first row -->
+        <div class="columns is-centered">
+          <div class="column">
+              <div class="content">
+                <div class="juxtapose">
+                  <img src="./static/images/compare/obj1_artificial_img07_hair.jpg" data-label="Source" />
+                  <img src="./static/images/compare/obj1_artificial_img07_braided_hair.png" data-label="ALE-Edit" />
+                </div>
+              </div>
+              <div class="has-text-justified">
+                <p style="text-align: center;">
+                  hair → <strong>braided hair</strong>
+                </p>
+              </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <div class="juxtapose">
+                <img src="./static/images/compare/obj1_faker.jpg" data-label="Source" />
+                <img src="./static/images/compare/obj1_faker_black_sunglass.webp" data-label="ALE-Edit" />
+              </div>
+            </div>
+            <div class="has-text-justified">
+              <p style="text-align: center;">
+                glasses → <strong>black sunglass</strong>
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <div class="juxtapose">
+                <img src="./static/images/compare/obj1_bird_flower.jpg" data-label="Source" />
+                <img src="./static/images/compare/obj1_cotton_candy.png" data-label="ALE-Edit" />
+              </div>
+            </div>
+            <div class="has-text-justified">
+              <p style="text-align: center;">
+                flower → <strong>cotton candy</strong>
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <!-- second row -->
+        <div class="columns is-centered">
+          <div class="column">
+              <div class="content">
+                <div class="juxtapose">
+                  <img src="./static/images/compare/obj2_turtle_green_lettuce.jpg" data-label="Source" />
+                  <img src="./static/images/compare/obj2_tank_fire.png" data-label="ALE-Edit" />
+                </div>
+              </div>
+              <div class="has-text-justified">
+                <p style="text-align: center;">
+                  turtle → <strong>tank</strong> <br>
+                  green lettuce → <strong>fire</strong>
+                </p>
+              </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <div class="juxtapose">
+                <img src="./static/images/compare/obj2_paprikas.jpg" data-label="Source" />
+                <img src="./static/images/compare/obj2_apple_cheese.png" data-label="ALE-Edit" />
+              </div>
+            </div>
+            <div class="has-text-justified">
+              <p style="text-align: center;">
+                yellow paprika → <strong>red apple</strong> <br>
+                red paprika → <strong>yellow cheese</strong>
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <div class="juxtapose">
+                <img src="./static/images/compare/obj2_cake.jpg" data-label="Source" />
+                <img src="./static/images/compare/obj2_chocolate_cake_plate.png" data-label="ALE-Edit" />
+              </div>
+            </div>
+            <div class="has-text-justified">
+              <p style="text-align: center;">
+                cake → <strong>chocolate cake</strong> <br>
+                plate → <strong>red plastic plate</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- third row -->
+        <div class="columns is-centered">
+          <div class="column">
+              <div class="content">
+                <div class="juxtapose">
+                  <img src="./static/images/compare/obj3_globe.jpg" data-label="Source" />
+                  <img src="./static/images/compare/obj3_gold_moon.png" data-label="ALE-Edit" />
+                </div>
+              </div>
+              <div class="has-text-justified">
+                <p style="text-align: center;">
+                  blue globe → <strong>gold globe</strong> <br>
+                  orange globe → <strong>red moon</strong> <br>
+                  cone → <strong>traffic cone</strong>
+                </p>
+              </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <div class="juxtapose">
+                <img src="./static/images/compare/obj3_wolf.jpg" data-label="Source" />
+                <img src="./static/images/compare/obj3_eagle.png" data-label="ALE-Edit" />
+              </div>
+            </div>
+            <div class="has-text-justified">
+              <p style="text-align: center;">
+                wolf → <strong>eagle</strong> <br>
+                moon → <strong>blue moon</strong> <br>
+                mountain → <strong>glacier</strong>
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <div class="juxtapose">
+                <img src="./static/images/compare/obj3_tree_couch.jpg" data-label="Source" />
+                <img src="./static/images/compare/obj3_christmas_snow.png" data-label="ALE-Edit" />
+              </div>
+            </div>
+            <div class="has-text-justified">
+              <p style="text-align: center;">
+                tree → <strong>Christmas tree</strong> <br>
+                couch → <strong>couch made of snow</strong> <br>
+                floor → <strong>ice rink</strong>
+              </p>s
+            </div>
+          </div>
+        </div>
+        <div class="hero-footer">
+          <sup>*</sup>The examples above are displayed using 
+          <a href="https://juxtapose.knightlab.com/" target="_blank">JuxtaposeJS</a>.
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser" style="margin-bottom: 2rem; margin-top: 2rem">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3 has-text-centered">Our Method: ALE-Edit</h2>
+        <div class="hero-body-center"><img src="./static/images/methods.png"
+            style="width: 50rem;"></div>
+        <h2 class=" title is-6 has-text-centered"> Overview of our method, Attribute-LEakage-free Editing (ALE-Edit).
+        </h2>
+        <h5 class=" subtitle is-6">
+          
+        The framework consists of two branches: the upper part (source branch) processes the source latent \( z_{\tau}^S \), 
+        and the lower part (target branch) processes the target latent \( z_{\tau}^T \) at each timestep \( \tau \).
+        The method comprises three key components: Object-Restricted Embeddings (ORE), Region-Guided Blending for Cross-Attention Masking (RGB-CAM), and Background Blending (BB).
+        ORE generates attribute-leakage-free embeddings to minimize interference between unrelated objects.
+        RGB-CAM leverages segmentation masks from Grounded-SAM to refine cross-attention activations, aligning attention to specific regions for each target object.
+        BB integrates the source latent for background regions and the target latent for edited regions.
+        </h5>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser" style="margin-bottom: 2rem; margin-top: 2rem">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3 has-text-centered">New Benchmark: ALE-Bench</h2>
+        <div class="hero-body-center"><img src="./static/images/ale_bench.png"
+          style="width: 50rem;"></div>
+          <h2 class="title is-6 has-text-centered"> Examples from ALE-Bench. </h2>
+        <div>
+          <p>
+            <strong>ALE-Bench</strong> (Attribute Leakage Evaluation Benchmark) is a novel benchmark designed to evaluate attribute leakage. 
+            It simulates real-world editing scenarios using succinct prompts and includes a total of 3,000 editing cases with five editing types and varying numbers of objects.
+            <br>
+            To quantify attribute leakage, we introduce two key metrics.
+          </p>
+          <ul>
+            <li>
+              <strong>Target-Internal (TI) Leakage:</strong> Measures unintended cross-influence between edited objects. Lower TI values indicate edits are well-isolated to the intended objects.
+            </li>
+            <li>
+              <strong>Target-External (TE) Leakage:</strong> Quantifies unintended changes in non-edited areas, such as the background. Lower TE values suggest that external areas remain unaffected by the edits.
+            </li>
+          </ul>        
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class=" container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3 has-text-centered">Comparison with Other Methods</h2>
+        <div class="hero-body-center"><img src="./static/images/figure1.png"
+            style="width: 50rem;"></div>
+        <h2 class="title is-6 has-text-centered"> Comparison of tuning-free image editing methods. </h2>
+        <h5 class="subtitle is-6">
+          In Editing column, the left side of → represents the source object, and the right side represents the target object.
+          The first two rows demonstrates cases of target-external leakage, where other methods either modify unintended regions or fail to preserve the structural integrity of the source image. 
+          The last two rows highlights target-internal leakage, where interactions between target attributes result in inconsistent or undesired edits.
+          Our method achieves accurate and consistent edits, preserving structural details and preventing both target-external and target-internal leakage.
+        </h5>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- main results-->
+  <section class="hero-teaser">
+    <div class="container is-max-desktop has-text-centered">
+      <div class="hero-body">
+        <h2 class="title is-3">Main Results</h2>
+        <h5 style="margin-bottom: 0.5rem;">
+          Our proposed method, ALE-Edit, demonstrates superior performance in attribute leakage control and image editing quality compared to existing methods, as shown in the results below.
+          Specifically, our method achieves the lowest scores in both <strong>Target-External (TE)</strong> and <strong>Target-Internal (TI)</strong> attribute leakage, ensuring precise edits limited to the specified target regions.
+          CS represents CLIP Similarity, SD represents Structure Distance.
+        </h5>
+        <div class="hero-body-center">
+          <img src="./static/images/table1.png" style="width: 50em;">
+        </div>
+        <h5 class="title is-6 has-text-centered"> Performance Comparison on ALE-Bench. </h2>
+
+        <div class="hero-body-center">
+          <img src="./static/images/table2.png" style="width: 50em;">
+        </div>
+        <h5 class="title is-6 has-text-centered">Performance of ALE-Edit across editing types.</h2>
+        
+        <div class="hero-body-center">
+          <img src="./static/images/table3.png" style="width: 50em;">
+        </div>
+        <h5 class="title is-6 has-text-centered">Performance of ALE-Edit across the number of editing objects.</h2>
+
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+
+  <!-- Youtube video -->
+  <!-- <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container"> -->
+  <!-- Paper video. -->
+  <!-- <h2 class="title is-3">Video Presentation</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+
+            <div class="publication-video"> -->
+  <!-- Youtube embed code here -->
+  <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End youtube video -->
+
+
+
+  <!-- Paper poster -->
+  <!-- <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title">Poster</h2>
+
+        <iframe src="static/pdfs/sample.pdf" width="100%" height="550">
+        </iframe>
+
+      </div>
+    </div>
+  </section> -->
+  <!--End paper poster -->
+
+
+  <!-- Teaser video-->
+  <!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
+  <!-- Your video here -->
+  <!-- <source src="static/videos/banner_video.mp4" -->
+  <!-- type="video/mp4"> -->
+  <!-- </video> -->
+  <!-- <h2 class="subtitle has-text-centered"> -->
+  <!-- Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.  -->
+  <!-- </h2> -->
+  <!-- </div> -->
+  <!-- </div> -->
+  <!-- </section> -->
+  <!-- End teaser video -->
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{mun2024addressingattributeleakagesdiffusionbased,
+        title={Addressing Attribute Leakages in Diffusion-based Image Editing without Training}, 
+        author={Sunung Mun and Jinhwan Nam and Sunghyun Cho and Jungseul Ok},
+        year={2024},
+        eprint={2412.04715},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2412.04715}, 
+  }</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the of this website, we just ask that you link back to this page in the footer.
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+                target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+  <link rel="stylesheet" href="static/css/juxtapose.css">
+  <script src="static/js/juxtapose.min.js"></script>
+  <style>
+    a.jx-knightlab {
+      display: none;
+    }
+  </style>
+</body>
+
+</html>
