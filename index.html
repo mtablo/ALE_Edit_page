@@ -5,12 +5,14 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="Addressing Attribute Leakages in Diffusion-based Image Editing without Training. Our method, ALE-Edit, significantly reduces attribute leakage while preserving high-quality image editing.">
+  <meta name="description"
+    content="Addressing Attribute Leakages in Diffusion-based Image Editing without Training. Our method, ALE-Edit, significantly reduces attribute leakage while preserving high-quality image editing.">
   <meta property="og:title" content="Addressing Attribute Leakages in Diffusion-based Image Editing without Training" />
-  <meta property="og:description" content="Learn about ALE-Edit, a novel framework for reducing attribute leakage in diffusion-based image editing, with benchmark results and demo code." />
+  <meta property="og:description"
+    content="Learn about ALE-Edit, a novel framework for reducing attribute leakage in diffusion-based image editing, with benchmark results and demo code." />
   <meta property="og:url" content="https://mtablo.github.io/ALE_Edit_page/" />
   <meta property="og:type" content="website" />
-  
+
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/images/ale_edit_banner.png" />
   <meta property="og:image:width" content="1200" />
@@ -23,7 +25,8 @@
   <!-- <meta name="twitter:image" content="static/images/ale_edit_banner.png"> -->
   <!-- <meta name="twitter:card" content="summary_large_image"> -->
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="ALE-Edit, attribute leakage, image editing, diffusion models, image editing with diffusion models, diffusion-based image editing, machine learning">
+  <meta name="keywords"
+    content="ALE-Edit, attribute leakage, image editing, diffusion models, image editing with diffusion models, diffusion-based image editing, machine learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -45,7 +48,7 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  
+
 
   <style>
     a.jx-knightlab {
@@ -63,7 +66,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Addressing Attribute Leakages in Diffusion-based Image Editing without Training
+            <h1 class="title is-1 publication-title">Addressing Attribute Leakages in Diffusion-based Image Editing
+              without Training
             </h1>
             <!-- <p class="title is-4 publication-title">CVPR 2024</p> -->
             <div class="is-size-5 publication-authors">
@@ -130,31 +134,255 @@
             </div>
             <div class="content has-text-justified">
               <p>
-                Our method, <strong>A</strong>ttribute-<strong>LE</strong>akage-free <strong>Edit</strong>ing (<strong>ALE-Edit</strong>), addresses attribute leakage in diffusion-based image editing, where unintended modifications affect non-target or target regions.
-                ALE-Edit incorporates three key components: 
-                (1) Object-Restricted Embeddings for localized attribute handling, 
-                (2) Region-Guided Blending for precise attention alignment, 
-                and (3) Background Blending to preserve unedited regions. 
-                Additionally, we introduce ALE-Bench, a benchmark for evaluating attribute leakage with novel metrics. 
-                Experiments show that ALE-Edit significantly reduces leakage while maintaining high-quality and efficient multi-object image editing.
+                Our method, <strong>A</strong>ttribute-<strong>LE</strong>akage-free <strong>Edit</strong>ing
+                (<strong>ALE-Edit</strong>), addresses attribute leakage in diffusion-based image editing, where
+                unintended modifications affect non-target or target regions.
+                ALE-Edit incorporates three key components:
+                (1) Object-Restricted Embeddings for localized attribute handling,
+                (2) Region-Guided Blending for precise attention alignment,
+                and (3) Background Blending to preserve unedited regions.
+                Additionally, we introduce <strong>ALE-Bench</strong>, a benchmark for evaluating attribute leakage with
+                novel metrics.
+                Experiments show that ALE-Edit significantly reduces leakage while maintaining high-quality and
+                efficient multi-object image editing.
                 The demo code and benchmark will be publicly released.
                 <!-- Our code is available at https://github.com/mlpostech/MedBN-robust-test-time-adaptation. -->
               </p>
             </div>
+            <div class="content">
+              <h2 class="title is-3 has-text-centered">Edit Examples from ALE-Bench</h2>
+              <div class="has-text-justified">
+                <h4 style="text-align: center;">
+                  sun → <strong>balloon</strong> <br>
+                  parasol → <strong>mushroom</strong>
+                </h4>
+              </div>
+
+              <div class="columns is-centered">
+                <div class="column">
+                  <div>
+                    <div class="juxtapose">
+                      <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
+                      <img src="./static/images/compare_others/object/ours_edit_3.png" data-label="ALE-Edit (Ours)" />
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="columns is-centered">
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
+                        <img src="./static/images/compare_others/object/infedit_edit_3.png" data-label="InfEdit" />
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
+                        <img src="./static/images/compare_others/object/masa_edit_3.png" data-label="MasaCtrl" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columns is-centered">
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
+                        <img src="./static/images/compare_others/object/fpe_edit_3.png" data-label="FPE" />
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
+                        <img src="./static/images/compare_others/object/p2p_edit_3.png" data-label="P2P" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="has-text-justified">
+                <h4 style="text-align: center;">
+                  floor → <strong>cream-colored carpet</strong> <br>
+                  flowerpot → <strong>blue-colored bucket</strong>
+                </h4>
+              </div>
+              <div class="columns is-centered">
+                <div class="column">
+                  <div class="juxtapose">
+                    <img src="./static/images/compare_others/color_object/artificial_img10.jpg" data-label="Source" />
+                    <img src="./static/images/compare_others/color_object/ours_edit_7.png"
+                      data-label="ALE-Edit (Ours)" />
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="columns is-centered">
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/color_object/artificial_img10.jpg"
+                          data-label="Source" />
+                        <img src="./static/images/compare_others/color_object/infedit_edit_7.png"
+                          data-label="InfEdit" />
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/color_object/artificial_img10.jpg"
+                          data-label="Source" />
+                        <img src="./static/images/compare_others/color_object/masa_edit_7.png" data-label="MasaCtrl" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columns is-centered">
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/color_object/artificial_img10.jpg"
+                          data-label="Source" />
+                        <img src="./static/images/compare_others/color_object/fpe_edit_7.png" data-label="FPE" />
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/color_object/artificial_img10.jpg"
+                          data-label="Source" />
+                        <img src="./static/images/compare_others/color_object/p2p_edit_7.png" data-label="P2P" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="has-text-justified">
+                <h4 style="text-align: center;">
+                  table → <strong>black-colored table</strong> <br>
+                  chair → <strong>crimson-colored chair</strong>
+                </h4>
+              </div>
+              <div class="columns is-centered">
+                <div class="column">
+                  <div class="juxtapose">
+                    <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
+                    <img src="./static/images/compare_others/color/ours_edit_8.png" data-label="ALE-Edit (Ours)" />
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="columns is-centered">
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
+                        <img src="./static/images/compare_others/color/infedit_edit_8.png" data-label="InfEdit" />
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
+                        <img src="./static/images/compare_others/color/masa_edit_8.png" data-label="MasaCtrl" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columns is-centered">
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
+                        <img src="./static/images/compare_others/color/fpe_edit_8.png" data-label="FPE" />
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="juxtapose" data-startingposition="10%">
+                        <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
+                        <img src="./static/images/compare_others/color/p2p_edit_8.png" data-label="P2P" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-footer">
+              <sup>*</sup>Compared methods:
+              <a href="https://sled-group.github.io/InfEdit/" target="_blank">InfEdit</a>,
+              <a href="https://ljzycmd.github.io/projects/MasaCtrl/" target="_blank">MasaCtrl</a>,
+              <a href="https://github.com/alibaba/EasyNLP/tree/a4ee9568fa094f5825346f3acd0d65b15f1e3a95/diffusion/FreePromptEditing"
+                target="_blank">FPE (Free-Prompt-Editing)</a>,
+              <a href="https://prompt-to-prompt.github.io/" target="_blank">P2P (Prompt-to-Prompt)</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser" style="margin-bottom: 2rem; margin-top: 2rem">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3 has-text-centered">Our Method: ALE-Edit</h2>
+        <div class="hero-body-center"><img src="./static/images/methods.png"></div>
+        <h2 class=" title is-6 has-text-centered"> Overview of our method, Attribute-LEakage-free Editing (ALE-Edit).
+        </h2>
+        <h5 class=" subtitle is-6">
+
+          The framework consists of two branches: the upper part (source branch) processes the source latent \(
+          z_{\tau}^S \),
+          and the lower part (target branch) processes the target latent \( z_{\tau}^T \) at each timestep \( \tau \).
+          The method comprises three key components: Object-Restricted Embeddings (ORE), Region-Guided Blending for
+          Cross-Attention Masking (RGB-CAM), and Background Blending (BB).
+          ORE generates attribute-leakage-free embeddings to minimize interference between unrelated objects.
+          RGB-CAM leverages segmentation masks from Grounded-SAM to refine cross-attention activations, aligning
+          attention to specific regions for each target object.
+          BB integrates the source latent for background regions and the target latent for edited regions.
+        </h5>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser" style="margin-bottom: 2rem; margin-top: 2rem">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3 has-text-centered">New Benchmark: ALE-Bench</h2>
+        <div class="hero-body-center"><img src="./static/images/ale_bench.png"></div>
+        <h2 class="title is-6 has-text-centered"> Examples from ALE-Bench. </h2>
+        <div>
+          <p>
+            <strong>ALE-Bench</strong> (Attribute Leakage Evaluation Benchmark) is a novel benchmark designed to
+            evaluate attribute leakage.
+            It simulates real-world editing scenarios using succinct prompts and includes a total of 3,000 editing cases
+            with five editing types and varying numbers of objects.
+            <br>
+            To quantify attribute leakage, we introduce two key metrics.
+          </p>
+          <ul>
+            <li>
+              <strong>Target-Internal (TI) Leakage:</strong> Measures unintended cross-influence between edited objects.
+              Lower TI values indicate edits are well-isolated to the intended objects.
+            </li>
+            <li>
+              <strong>Target-External (TE) Leakage:</strong> Quantifies unintended changes in non-edited areas, such as
+              the background. Lower TE values suggest that external areas remain unaffected by the edits.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class=" container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3 has-text-centered">More Editing Examples</h2>
         <!-- first row -->
         <div class="columns is-centered">
           <div class="column">
-              <div class="content">
-                <div class="juxtapose">
-                  <img src="./static/images/compare/obj1_artificial_img07_hair.jpg" data-label="Source" />
-                  <img src="./static/images/compare/obj1_artificial_img07_braided_hair.png" data-label="ALE-Edit" />
-                </div>
+            <div class="content">
+              <div class="juxtapose">
+                <img src="./static/images/compare/obj1_artificial_img07_hair.jpg" data-label="Source" />
+                <img src="./static/images/compare/obj1_artificial_img07_braided_hair.png" data-label="ALE-Edit" />
               </div>
-              <div class="has-text-justified">
-                <p style="text-align: center;">
-                  hair → <strong>braided hair</strong>
-                </p>
-              </div>
+            </div>
+            <div class="has-text-justified">
+              <p style="text-align: center;">
+                hair → <strong>braided hair</strong>
+              </p>
+            </div>
           </div>
           <div class="column">
             <div class="content">
@@ -187,18 +415,18 @@
         <!-- second row -->
         <div class="columns is-centered">
           <div class="column">
-              <div class="content">
-                <div class="juxtapose">
-                  <img src="./static/images/compare/obj2_turtle_green_lettuce.jpg" data-label="Source" />
-                  <img src="./static/images/compare/obj2_tank_fire.png" data-label="ALE-Edit" />
-                </div>
+            <div class="content">
+              <div class="juxtapose">
+                <img src="./static/images/compare/obj2_turtle_green_lettuce.jpg" data-label="Source" />
+                <img src="./static/images/compare/obj2_tank_fire.png" data-label="ALE-Edit" />
               </div>
-              <div class="has-text-justified">
-                <p style="text-align: center;">
-                  turtle → <strong>tank</strong> <br>
-                  green lettuce → <strong>fire</strong>
-                </p>
-              </div>
+            </div>
+            <div class="has-text-justified">
+              <p style="text-align: center;">
+                turtle → <strong>tank</strong> <br>
+                green lettuce → <strong>fire</strong>
+              </p>
+            </div>
           </div>
           <div class="column">
             <div class="content">
@@ -232,19 +460,19 @@
         <!-- third row -->
         <div class="columns is-centered">
           <div class="column">
-              <div class="content">
-                <div class="juxtapose">
-                  <img src="./static/images/compare/obj3_globe.jpg" data-label="Source" />
-                  <img src="./static/images/compare/obj3_gold_moon.png" data-label="ALE-Edit" />
-                </div>
+            <div class="content">
+              <div class="juxtapose">
+                <img src="./static/images/compare/obj3_globe.jpg" data-label="Source" />
+                <img src="./static/images/compare/obj3_gold_moon.png" data-label="ALE-Edit" />
               </div>
-              <div class="has-text-justified">
-                <p style="text-align: center;">
-                  blue globe → <strong>gold globe</strong> <br>
-                  orange globe → <strong>red moon</strong> <br>
-                  box → <strong>steel box</strong>
-                </p>
-              </div>
+            </div>
+            <div class="has-text-justified">
+              <p style="text-align: center;">
+                blue globe → <strong>gold globe</strong> <br>
+                orange globe → <strong>red moon</strong> <br>
+                box → <strong>steel box</strong>
+              </p>
+            </div>
           </div>
           <div class="column">
             <div class="content">
@@ -278,76 +506,18 @@
           </div>
         </div>
         <div class="hero-footer">
-          <sup>*</sup>The examples above are displayed using 
+          <sup>*</sup>The examples above are displayed using
           <a href="https://juxtapose.knightlab.com/" target="_blank">JuxtaposeJS</a>.
         </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser" style="margin-bottom: 2rem; margin-top: 2rem">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <h2 class="title is-3 has-text-centered">Our Method: ALE-Edit</h2>
-        <div class="hero-body-center"><img src="./static/images/methods.png"
-            style="width: 50rem;"></div>
-        <h2 class=" title is-6 has-text-centered"> Overview of our method, Attribute-LEakage-free Editing (ALE-Edit).
-        </h2>
-        <h5 class=" subtitle is-6">
-          
-        The framework consists of two branches: the upper part (source branch) processes the source latent \( z_{\tau}^S \), 
-        and the lower part (target branch) processes the target latent \( z_{\tau}^T \) at each timestep \( \tau \).
-        The method comprises three key components: Object-Restricted Embeddings (ORE), Region-Guided Blending for Cross-Attention Masking (RGB-CAM), and Background Blending (BB).
-        ORE generates attribute-leakage-free embeddings to minimize interference between unrelated objects.
-        RGB-CAM leverages segmentation masks from Grounded-SAM to refine cross-attention activations, aligning attention to specific regions for each target object.
-        BB integrates the source latent for background regions and the target latent for edited regions.
-        </h5>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser" style="margin-bottom: 2rem; margin-top: 2rem">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <h2 class="title is-3 has-text-centered">New Benchmark: ALE-Bench</h2>
-        <div class="hero-body-center"><img src="./static/images/ale_bench.png"
-          style="width: 50rem;"></div>
-          <h2 class="title is-6 has-text-centered"> Examples from ALE-Bench. </h2>
-        <div>
-          <p>
-            <strong>ALE-Bench</strong> (Attribute Leakage Evaluation Benchmark) is a novel benchmark designed to evaluate attribute leakage. 
-            It simulates real-world editing scenarios using succinct prompts and includes a total of 3,000 editing cases with five editing types and varying numbers of objects.
-            <br>
-            To quantify attribute leakage, we introduce two key metrics.
-          </p>
-          <ul>
-            <li>
-              <strong>Target-Internal (TI) Leakage:</strong> Measures unintended cross-influence between edited objects. Lower TI values indicate edits are well-isolated to the intended objects.
-            </li>
-            <li>
-              <strong>Target-External (TE) Leakage:</strong> Quantifies unintended changes in non-edited areas, such as the background. Lower TE values suggest that external areas remain unaffected by the edits.
-            </li>
-          </ul>        
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class=" container is-max-desktop">
-      <div class="hero-body">
-        <h2 class="title is-3 has-text-centered">Comparison with Other Methods</h2>
-        <div class="hero-body-center"><img src="./static/images/figure1.png"
-            style="width: 50rem;"></div>
-        <h2 class="title is-6 has-text-centered"> Comparison of tuning-free image editing methods. </h2>
         <h5 class="subtitle is-6">
-          In Editing column, the left side of → represents the source object, and the right side represents the target object.
-          The first two rows demonstrates cases of target-external leakage, where other methods either modify unintended regions or fail to preserve the structural integrity of the source image. 
-          The last two rows highlights target-internal leakage, where interactions between target attributes result in inconsistent or undesired edits.
-          Our method achieves accurate and consistent edits, preserving structural details and preventing both target-external and target-internal leakage.
+          In Editing column, the left side of → represents the source object, and the right side represents the target
+          object.
+          The first two rows demonstrates cases of target-external leakage, where other methods either modify unintended
+          regions or fail to preserve the structural integrity of the source image.
+          The last two rows highlights target-internal leakage, where interactions between target attributes result in
+          inconsistent or undesired edits.
+          Our method achieves accurate and consistent edits, preserving structural details and preventing both
+          target-external and target-internal leakage.
         </h5>
       </div>
     </div>
@@ -361,24 +531,27 @@
       <div class="hero-body">
         <h2 class="title is-3">Main Results</h2>
         <h5 style="margin-bottom: 0.5rem;">
-          Our proposed method, ALE-Edit, demonstrates superior performance in attribute leakage control and image editing quality compared to existing methods, as shown in the results below.
-          Specifically, our method achieves the lowest scores in both <strong>Target-External (TE)</strong> and <strong>Target-Internal (TI)</strong> attribute leakage, ensuring precise edits limited to the specified target regions.
+          Our proposed method, ALE-Edit, demonstrates superior performance in attribute leakage control and image
+          editing quality compared to existing methods, as shown in the results below.
+          Specifically, our method achieves the lowest scores in both <strong>Target-External (TE)</strong> and
+          <strong>Target-Internal (TI)</strong> attribute leakage, ensuring precise edits limited to the specified
+          target regions.
           CS represents CLIP Similarity, SD represents Structure Distance.
         </h5>
         <div class="hero-body-center">
-          <img src="./static/images/table1.png" style="width: 50em;">
+          <img src="./static/images/table1.png">
         </div>
         <h5 class="title is-6 has-text-centered"> Performance Comparison on ALE-Bench. </h2>
 
-        <div class="hero-body-center">
-          <img src="./static/images/table2.png" style="width: 50em;">
-        </div>
-        <h5 class="title is-6 has-text-centered">Performance of ALE-Edit across editing types.</h2>
-        
-        <div class="hero-body-center">
-          <img src="./static/images/table3.png" style="width: 50em;">
-        </div>
-        <h5 class="title is-6 has-text-centered">Performance of ALE-Edit across the number of editing objects.</h2>
+          <div class="hero-body-center">
+            <img src="./static/images/table2.png">
+          </div>
+          <h5 class="title is-6 has-text-centered">Performance of ALE-Edit across editing types.</h2>
+
+            <div class="hero-body-center">
+              <img src="./static/images/table3.png">
+            </div>
+            <h5 class="title is-6 has-text-centered">Performance of ALE-Edit across the number of editing objects.</h2>
 
       </div>
     </div>
@@ -490,6 +663,23 @@
   <!-- End of Statcounter Code -->
   <link rel="stylesheet" href="static/css/juxtapose.css">
   <script src="static/js/juxtapose.min.js"></script>
+  <script>
+    // Tab switching logic
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        tabs.forEach(t => t.classList.remove('active'));
+        tabContents.forEach(tc => tc.classList.remove('active'));
+
+        // Add active class to clicked tab and corresponding content
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
   <style>
     a.jx-knightlab {
       display: none;

@@ -218,3 +218,31 @@ body {
 tr:hover td {
   background-color: rgba(190, 255, 213, 0.3);
 }
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.tab {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+.tab.active {
+  background-color: #007bff;
+  color: white;
+}
+.tab:hover {
+  background-color: #e0e0e0;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
