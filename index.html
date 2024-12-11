@@ -151,13 +151,6 @@
             </div>
             <div class="content">
               <h2 class="title is-3 has-text-centered">Comparison of ALE-Edit with Other Methods</h2>
-              <div class="has-text-justified">
-                <h3 style="text-align: center;">
-                  sun → <strong>balloon</strong> <br>
-                  parasol → <strong>mushroom</strong>
-                </h3>
-              </div>
-
               <div class="columns is-centered">
                 <div class="column">
                   <div>
@@ -198,13 +191,13 @@
                   </div>
                 </div>
               </div>
-
               <div class="has-text-justified">
-                <h3 style="text-align: center;">
-                  floor → <strong>cream-colored carpet</strong> <br>
-                  flowerpot → <strong>blue-colored bucket</strong>
+                <h3 style="text-align: center; margin-bottom: 3rem">
+                  sun → <strong>balloon</strong> <br>
+                  parasol → <strong>mushroom</strong>
                 </h3>
               </div>
+
               <div class="columns is-centered">
                 <div class="column">
                   <div class="juxtapose" data-startingposition="15%">
@@ -249,14 +242,13 @@
                   </div>
                 </div>
               </div>
-
-
               <div class="has-text-justified">
-                <h3 style="text-align: center;">
-                  table → <strong>black-colored table</strong> <br>
-                  chair → <strong>crimson-colored chair</strong>
+                <h3 style="text-align: center; margin-bottom: 3rem">
+                  floor → <strong>cream-colored carpet</strong> <br>
+                  flowerpot → <strong>blue-colored bucket</strong>
                 </h3>
               </div>
+
               <div class="columns is-centered">
                 <div class="column">
                   <div class="juxtapose" data-startingposition="15%">
@@ -296,6 +288,12 @@
                   </div>
                 </div>
               </div>
+              <div class="has-text-justified">
+                <h3 style="text-align: center; margin-bottom: 1rem">
+                  table → <strong>black-colored table</strong> <br>
+                  chair → <strong>crimson-colored chair</strong>
+                </h3>
+              </div>
             </div>
             <div class="hero-footer">
               <sup>*</sup>Compared methods:
@@ -315,12 +313,9 @@
   <section class="hero teaser" style="margin-bottom: 2rem; margin-top: 2rem">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <h2 class="title is-3 has-text-centered">Proposed Method: Attribute-LEakage-free Editing (ALE-Edit)</h2>
+        <h2 class="title is-3 has-text-centered">Proposed Method: Attribute-Leakage-free Editing</h2>
         <div class="hero-body-center"><img src="./static/images/methods.png"></div>
-        <h2 class=" title is-6 has-text-centered"> Overview of ALE-Edit
-        </h2>
-        <h5 class=" subtitle is-6">
-
+        <h5 class=" subtitle is-6 has-text-justified">
           The framework consists of two branches: the upper part (source branch) processes the source latent \(
           z_{\tau}^S \),
           and the lower part (target branch) processes the target latent \( z_{\tau}^T \) at each timestep \( \tau \).
@@ -340,7 +335,7 @@
       <div class="hero-body">
         <h2 class="title is-3 has-text-centered">Proposed Benchmark: Attribute Leakage Evaluation Benchmark
         </h2>
-        <div>
+        <div class="has-text-justified">
           <p>
             <strong>ALE-Bench</strong> (Attribute Leakage Evaluation Benchmark) is a novel benchmark designed to
             evaluate attribute leakage.
@@ -360,8 +355,10 @@
             </li>
           </ul>
         </div>
+
+        <h2 class="title is-6 has-text-centered" style="margin-top: 0.7rem; margin-bottom: 0rem"> Examples of editing
+          scenarios in ALE-Bench</h2>
         <div class="hero-body-center" style="padding: 0;"><img src="./static/images/ale_bench.png"></div>
-        <h2 class="title is-6 has-text-centered"> Examples of editing scenarios in ALE-Bench</h2>
       </div>
     </div>
   </section>
@@ -369,11 +366,11 @@
   <section class="hero teaser ">
     <div class="container is-max-desktop" style="width: 100%;">
       <div class="hero-body">
-        <h2 class="title is-3 has-text-centered">Diverse editing results of ALE-Edit</h2>
+        <h2 class="title is-3 has-text-centered">Various Editing Results of ALE-Edit</h2>
         <!-- first row -->
         <div class="columns is-centered">
           <div class="column">
-            <div class="content">
+            <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj1_artificial_img07_hair.jpg" data-label="Source" />
                 <img src="./static/images/compare/obj1_artificial_img07_braided_hair.png" data-label="ALE-Edit" />
@@ -386,7 +383,7 @@
             </div>
           </div>
           <div class="column">
-            <div class="content">
+            <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj1_faker.jpg" data-label="Source" />
                 <img src="./static/images/compare/obj1_faker_black_sunglass.webp" data-label="ALE-Edit" />
@@ -399,7 +396,7 @@
             </div>
           </div>
           <div class="column">
-            <div class="content">
+            <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj1_bird_flower.jpg" data-label="Source" />
                 <img src="./static/images/compare/obj1_cotton_candy.png" data-label="ALE-Edit" />
@@ -416,7 +413,7 @@
         <!-- second row -->
         <div class="columns is-centered">
           <div class="column">
-            <div class="content">
+            <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj2_turtle_green_lettuce.jpg" data-label="Source" />
                 <img src="./static/images/compare/obj2_tank_fire.png" data-label="ALE-Edit" />
@@ -430,7 +427,7 @@
             </div>
           </div>
           <div class="column">
-            <div class="content">
+            <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj2_paprikas.jpg" data-label="Source" />
                 <img src="./static/images/compare/obj2_apple_cheese.png" data-label="ALE-Edit" />
@@ -444,7 +441,7 @@
             </div>
           </div>
           <div class="column">
-            <div class="content">
+            <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj2_cake.jpg" data-label="Source" />
                 <img src="./static/images/compare/obj2_chocolate_cake_plate.png" data-label="ALE-Edit" />
@@ -461,7 +458,7 @@
         <!-- third row -->
         <div class="columns is-centered">
           <div class="column">
-            <div class="content">
+            <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj3_globe.jpg" data-label="Source" />
                 <img src="./static/images/compare/obj3_gold_moon.png" data-label="ALE-Edit" />
@@ -476,7 +473,7 @@
             </div>
           </div>
           <div class="column">
-            <div class="content">
+            <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj3_wolf.jpg" data-label="Source" />
                 <img src="./static/images/compare/obj3_eagle.png" data-label="ALE-Edit" />
@@ -491,7 +488,7 @@
             </div>
           </div>
           <div class="column">
-            <div class="content">
+            <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj3_tree_couch.jpg" data-label="Source" />
                 <img src="./static/images/compare/obj3_christmas_snow.png" data-label="ALE-Edit" />
@@ -518,10 +515,10 @@
 
   <!-- main results-->
   <section class="hero-teaser">
-    <div class="container is-max-desktop has-text-centered">
+    <div class="container is-max-desktop ">
       <div class="hero-body">
-        <h2 class="title is-3">Results</h2>
-        <h5 style="margin-bottom: 0.5rem;">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <h5 class="has-text-justified">
           Our proposed method, ALE-Edit, demonstrates superior performance in attribute leakage control and image
           editing quality compared to existing methods, as shown in the results below.
           Specifically, our method achieves the lowest scores in both <strong>Target-External (TE)</strong> and
@@ -529,21 +526,21 @@
           target regions.
           CS represents CLIP Similarity, SD represents Structure Distance.
         </h5>
+        <h5 class="title is-6 has-text-centered" style="margin-top: 0.5rem; margin-bottom: 0rem"> Performance comparison
+          on ALE-Bench </h5>
         <div class="hero-body-center">
           <img src="./static/images/table1.png">
         </div>
-        <h5 class="title is-6 has-text-centered"> Performance Comparison on ALE-Bench </h2>
-
-          <div class="hero-body-center">
-            <img src="./static/images/table2.png">
-          </div>
-          <h5 class="title is-6 has-text-centered">Performance of ALE-Edit across editing types</h2>
-
-            <div class="hero-body-center">
-              <img src="./static/images/table3.png">
-            </div>
-            <h5 class="title is-6 has-text-centered">Performance of ALE-Edit across the number of editing objects</h2>
-
+        <h5 class="title is-6 has-text-centered" style="margin-top: 0.5rem; margin-bottom: 0rem">Performance of ALE-Edit
+          across editing types</h5>
+        <div class="hero-body-center">
+          <img src="./static/images/table2.png">
+        </div>
+        <h5 class="title is-6 has-text-centered" style="margin-top: 0.5rem; margin-bottom: 0rem">Performance of ALE-Edit
+          across the number of editing objects</h5>
+        <div class="hero-body-center">
+          <img src="./static/images/table3.png">
+        </div>
       </div>
     </div>
     </div>
