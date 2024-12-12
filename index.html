@@ -132,183 +132,200 @@
 
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-light">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class=" title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Our method, <strong>A</strong>ttribute-<strong>LE</strong>akage-free <strong>Edit</strong>ing
-                (<strong>ALE-Edit</strong>), addresses attribute leakage in diffusion-based image editing, where
-                unintended modifications affect non-target or target regions.
-                ALE-Edit incorporates three key components:
-                (1) Object-Restricted Embeddings for localized attribute handling,
-                (2) Region-Guided Blending for precise attention alignment,
-                and (3) Background Blending to preserve unedited regions.
-                Additionally, we introduce <strong>ALE-Bench</strong>, a benchmark for evaluating attribute leakage with
-                novel metrics.
-                Experiments show that ALE-Edit significantly reduces leakage while maintaining high-quality and
-                efficient multi-object image editing.
-                The demo code and benchmark will be publicly released.
-                <!-- Our code is available at https://github.com/mlpostech/MedBN-robust-test-time-adaptation. -->
+                Diffusion models have become a cornerstone in image editing, offering flexibility with language
+                prompts and source images. However, a key challenge is attribute leakage, where unintended
+                modifications occur in non-target regions or within target regions due to attribute interference.
+                Existing methods often suffer from leakage due to naive text embeddings and inadequate handling of
+                End-of-Sequence (EOS) token embeddings.
+                To address this, we propose <strong>ALE-Edit</strong> (Attribute-leakage-free editing), a novel
+                framework to minimize
+                attribute leakage with three components:
+                (1) Object-Restricted Embeddings (ORE) to localize object-specific attributes in text embeddings,
+                (2) Region-Guided Blending for Cross-Attention Masking (RGB-CAM) to align attention with target
+                regions, and
+                (3) Background Blending (BB) to preserve non-edited regions.
+                Additionally, we introduce <strong>ALE-Bench</strong>, a benchmark for evaluating attribute leakage
+                with new metrics
+                for target-external and target-internal leakage.
+                Experiments demonstrate that our framework significantly reduces attribute leakage while maintaining
+                high editing quality, providing an efficient and tuning-free solution for multi-object image editing.
               </p>
-            </div>
-            <div class="content">
-              <h2 class="title is-3 has-text-centered">Comparison of ALE-Edit with Other Methods</h2>
-              <div class="columns is-centered">
-                <div class="column">
-                  <div>
-                    <div class="juxtapose" data-startingposition="15%">
-                      <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
-                      <img src="./static/images/compare_others/object/ours_edit_3.png" data-label="ALE-Edit (Ours)" />
-                    </div>
-                  </div>
-                </div>
-                <div class="column">
-                  <div class="columns is-centered">
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
-                        <img src="./static/images/compare_others/object/infedit_edit_3.png" data-label="InfEdit" />
-                      </div>
-                    </div>
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
-                        <img src="./static/images/compare_others/object/masa_edit_3.png" data-label="MasaCtrl" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="columns is-centered">
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
-                        <img src="./static/images/compare_others/object/fpe_edit_3.png" data-label="FPE" />
-                      </div>
-                    </div>
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
-                        <img src="./static/images/compare_others/object/p2p_edit_3.png" data-label="P2P" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="has-text-justified">
-                <h3 style="text-align: center; margin-bottom: 3rem">
-                  sun → <strong>balloon</strong> <br>
-                  parasol → <strong>mushroom</strong>
-                </h3>
-              </div>
-
-              <div class="columns is-centered">
-                <div class="column">
-                  <div class="juxtapose" data-startingposition="15%">
-                    <img src="./static/images/compare_others/color_object/artificial_img10.jpg" data-label="Source" />
-                    <img src="./static/images/compare_others/color_object/ours_edit_7.png"
-                      data-label="ALE-Edit (Ours)" />
-                  </div>
-                </div>
-                <div class="column">
-                  <div class="columns is-centered">
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/color_object/artificial_img10.jpg"
-                          data-label="Source" />
-                        <img src="./static/images/compare_others/color_object/infedit_edit_7.png"
-                          data-label="InfEdit" />
-                      </div>
-                    </div>
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/color_object/artificial_img10.jpg"
-                          data-label="Source" />
-                        <img src="./static/images/compare_others/color_object/masa_edit_7.png" data-label="MasaCtrl" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="columns is-centered">
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/color_object/artificial_img10.jpg"
-                          data-label="Source" />
-                        <img src="./static/images/compare_others/color_object/fpe_edit_7.png" data-label="FPE" />
-                      </div>
-                    </div>
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/color_object/artificial_img10.jpg"
-                          data-label="Source" />
-                        <img src="./static/images/compare_others/color_object/p2p_edit_7.png" data-label="P2P" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="has-text-justified">
-                <h3 style="text-align: center; margin-bottom: 3rem">
-                  floor → <strong>cream-colored carpet</strong> <br>
-                  flowerpot → <strong>blue-colored bucket</strong>
-                </h3>
-              </div>
-
-              <div class="columns is-centered">
-                <div class="column">
-                  <div class="juxtapose" data-startingposition="15%">
-                    <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
-                    <img src="./static/images/compare_others/color/ours_edit_8.png" data-label="ALE-Edit (Ours)" />
-                  </div>
-                </div>
-
-                <div class="column">
-                  <div class="columns is-centered">
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
-                        <img src="./static/images/compare_others/color/infedit_edit_8.png" data-label="InfEdit" />
-                      </div>
-                    </div>
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
-                        <img src="./static/images/compare_others/color/masa_edit_8.png" data-label="MasaCtrl" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="columns is-centered">
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
-                        <img src="./static/images/compare_others/color/fpe_edit_8.png" data-label="FPE" />
-                      </div>
-                    </div>
-                    <div class="column">
-                      <div class="juxtapose" data-startingposition="1%">
-                        <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
-                        <img src="./static/images/compare_others/color/p2p_edit_8.png" data-label="P2P" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="has-text-justified">
-                <h3 style="text-align: center; margin-bottom: 1rem">
-                  table → <strong>black-colored table</strong> <br>
-                  chair → <strong>crimson-colored chair</strong>
-                </h3>
-              </div>
-            </div>
-            <div class="hero-footer">
-              <sup>*</sup>Compared methods:
-              <a href="https://sled-group.github.io/InfEdit/" target="_blank">InfEdit</a>,
-              <a href="https://ljzycmd.github.io/projects/MasaCtrl/" target="_blank">MasaCtrl</a>,
-              <a href="https://github.com/alibaba/EasyNLP/tree/a4ee9568fa094f5825346f3acd0d65b15f1e3a95/diffusion/FreePromptEditing"
-                target="_blank">FPE (Free-Prompt-Editing)</a>,
-              <a href="https://prompt-to-prompt.github.io/" target="_blank">P2P (Prompt-to-Prompt)</a>. <br>
-              All edit scenarios are from ALE-Bench.
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <section class="hero teaser" style="margin-bottom: 2rem; margin-top: 2rem">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3">Comparison of ALE-Edit with Other Methods</h2>
+        <div class="columns is-centered">
+          <div class="column">
+            <div>
+              <div class="juxtapose" data-startingposition="15%">
+                <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
+                <img src="./static/images/compare_others/object/ours_edit_3.png" data-label="ALE-Edit (Ours)" />
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/object/infedit_edit_3.png" data-label="InfEdit" />
+                </div>
+              </div>
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/object/masa_edit_3.png" data-label="MasaCtrl" />
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/object/fpe_edit_3.png" data-label="FPE" />
+                </div>
+              </div>
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/object/p2p_edit_3.png" data-label="P2P" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="has-text-justified">
+          <h3 style="text-align: center; margin-bottom: 3rem; font-size: 1.5rem">
+            <span style="font-weight: normal;">sun</span> → <strong>balloon</strong> <br>
+            <span style="font-weight: normal;">parasol</span> → <strong>mushroom</strong>
+          </h3>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="juxtapose" data-startingposition="15%">
+              <img src="./static/images/compare_others/color_object/artificial_img10.jpg" data-label="Source" />
+              <img src="./static/images/compare_others/color_object/ours_edit_7.png" data-label="ALE-Edit (Ours)" />
+            </div>
+          </div>
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/color_object/artificial_img10.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/color_object/infedit_edit_7.png" data-label="InfEdit" />
+                </div>
+              </div>
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/color_object/artificial_img10.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/color_object/masa_edit_7.png" data-label="MasaCtrl" />
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/color_object/artificial_img10.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/color_object/fpe_edit_7.png" data-label="FPE" />
+                </div>
+              </div>
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/color_object/artificial_img10.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/color_object/p2p_edit_7.png" data-label="P2P" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="has-text-justified">
+          <h3 style="text-align: center; margin-bottom: 3rem; font-size: 1.5rem">
+            <span style="font-weight: normal;">floor</span> → <strong>cream-colored carpet</strong> <br>
+            <span style="font-weight: normal;">flowerpot</span> → <strong>blue-colored bucket</strong>
+          </h3>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="juxtapose" data-startingposition="15%">
+              <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
+              <img src="./static/images/compare_others/color/ours_edit_8.png" data-label="ALE-Edit (Ours)" />
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/color/infedit_edit_8.png" data-label="InfEdit" />
+                </div>
+              </div>
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/color/masa_edit_8.png" data-label="MasaCtrl" />
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/color/fpe_edit_8.png" data-label="FPE" />
+                </div>
+              </div>
+              <div class="column">
+                <div class="juxtapose" data-startingposition="1%">
+                  <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
+                  <img src="./static/images/compare_others/color/p2p_edit_8.png" data-label="P2P" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="has-text-justified">
+          <h3 style="text-align: center; margin-bottom: 1rem; font-size: 1.5rem">
+            <span style="font-weight: normal;">table</span> → <strong>black-colored table</strong> <br>
+            <span style="font-weight: normal;">chair</span> → <strong>crimson-colored chair</strong>
+          </h3>
+        </div>
+        <div class="hero-footer">
+          <sup>*</sup>Compared methods:
+          <a href="https://sled-group.github.io/InfEdit/" target="_blank">InfEdit</a>,
+          <a href="https://ljzycmd.github.io/projects/MasaCtrl/" target="_blank">MasaCtrl</a>,
+          <a href="https://github.com/alibaba/EasyNLP/tree/a4ee9568fa094f5825346f3acd0d65b15f1e3a95/diffusion/FreePromptEditing"
+            target="_blank">FPE (Free-Prompt-Editing)</a>,
+          <a href="https://prompt-to-prompt.github.io/" target="_blank">P2P (Prompt-to-Prompt)</a> <br>
+          All edit scenarios are from <strong>ALE-Bench</strong>.
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <section class="hero teaser" style="margin-bottom: 2rem; margin-top: 2rem">
     <div class="container is-max-desktop">
@@ -346,14 +363,39 @@
           </p>
           <ul>
             <li>
-              <strong>Target-Internal (TI) Leakage:</strong> Measures unintended cross-influence between edited objects.
-              Lower TI values indicate edits are well-isolated to the intended objects.
+              <strong>Target-Internal (TI) Leakage</strong> measures unintended cross-influence between edited objects.
+              Lower TI values indicate edits are well-isolated to the intended objects:
+              <div class="has-text-centered" style="font-size: 1.5rem; padding: 1rem">
+                \(
+                \text{TI} = \frac{1}{N(N-1)}\sum_{i \not= j}^{N}
+                \text{CLIP} \left(
+                I_e \odot m_j, y_i^T
+                \right)
+                \label{eq/ti}.
+                \)
+              </div>
             </li>
             <li>
-              <strong>Target-External (TE) Leakage:</strong> Quantifies unintended changes in non-edited areas, such as
-              the background. Lower TE values suggest that external areas remain unaffected by the edits.
+              <strong>Target-External (TE) Leakage</strong> quantifies unintended changes in non-edited areas, such as
+              the background. Lower TE values suggest that external areas remain unaffected by the edits:
+              <div class="has-text-centered" style="font-size: 1.5rem; padding: 1rem">
+                \(
+                \text{TE} = \frac{1}{N}\sum_{i=1}^{N}
+                \text{CLIP}\left(
+                I_e \odot \left( \textbf{1} - \bigcup_{j=1}^{N}{m}_j\right), y_i^T
+                \right)
+                \label{eq/te},
+                \)
+              </div>
             </li>
           </ul>
+          <p>
+            where CLIP is the CLIP similarity score,
+            \(N\) is the number of objects to be edited,
+            \(I_e\) is the edited image,
+            \({m}_j\) is the \(j\)-th object mask,
+            and \(y_i^T\) is the target prompt for \(i\)-th object.
+          </p>
         </div>
 
         <h2 class="title is-6 has-text-centered" style="margin-top: 0.7rem; margin-bottom: 0rem"> Examples of editing
@@ -526,21 +568,23 @@
           target regions.
           CS represents CLIP Similarity, SD represents Structure Distance.
         </h5>
-        <h5 class="title is-6 has-text-centered" style="margin-top: 0.5rem; margin-bottom: 0rem"> Performance comparison
-          on ALE-Bench </h5>
+
         <div class="hero-body-center">
           <img src="./static/images/table1.png">
         </div>
-        <h5 class="title is-6 has-text-centered" style="margin-top: 0.5rem; margin-bottom: 0rem">Performance of ALE-Edit
-          across editing types</h5>
+        <h5 class="title is-6 has-text-centered" style="margin-top: 0rem; margin-bottom: 1.5rem"> Performance comparison
+          on ALE-Bench </h5>
         <div class="hero-body-center">
           <img src="./static/images/table2.png">
         </div>
-        <h5 class="title is-6 has-text-centered" style="margin-top: 0.5rem; margin-bottom: 0rem">Performance of ALE-Edit
+        <h5 class="title is-6 has-text-centered" style="margin-top: 0rem; margin-bottom: 1.5rem">Performance of ALE-Edit
           across the number of editing objects</h5>
         <div class="hero-body-center">
           <img src="./static/images/table3.png">
         </div>
+
+        <h5 class="title is-6 has-text-centered" style="margin-top: 0rem; margin-bottom: 1.5rem">Performance of ALE-Edit
+          across editing types</h5>
       </div>
     </div>
     </div>
