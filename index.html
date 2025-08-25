@@ -6,10 +6,10 @@
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description"
-    content="Addressing Attribute Leakages in Diffusion-based Image Editing without Training. Our method, ALE-Edit, significantly reduces attribute leakage while preserving high-quality image editing.">
-  <meta property="og:title" content="Addressing Attribute Leakages in Diffusion-based Image Editing without Training" />
+    content="Addressing Text Embedding Leakage in Diffusion-based Image Editing. Our method, ALE, significantly reduces attribute leakage while preserving high-quality image editing.">
+  <meta property="og:title" content="Addressing Text Embedding Leakage in Diffusion-based Image Editing" />
   <meta property="og:description"
-    content="Learn about ALE-Edit, a novel framework for reducing attribute leakage in diffusion-based image editing, with benchmark results and demo code." />
+    content="Learn about ALE, a novel framework for reducing attribute leakage in diffusion-based image editing, with benchmark results and demo code." />
   <meta property="og:url" content="https://mtablo.github.io/ALE_Edit_page/" />
   <meta property="og:type" content="website" />
 
@@ -20,17 +20,17 @@
 
 
   <!-- <meta name="twitter:title" content="Addressing Attribute Leakages in Diffusion-based Image Editing without Training"> -->
-  <!-- <meta name="twitter:description" content="Discover ALE-Edit, a diffusion-based image editing framework addressing attribute leakage without training."> -->
+  <!-- <meta name="twitter:description" content="Discover ALE, a diffusion-based image editing framework addressing attribute leakage without training."> -->
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <!-- <meta name="twitter:image" content="static/images/ale_edit_banner.png"> -->
   <!-- <meta name="twitter:card" content="summary_large_image"> -->
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords"
-    content="ALE-Edit, attribute leakage, image editing, diffusion models, image editing with diffusion models, diffusion-based image editing, machine learning">
+    content="ALE, attribute leakage, image editing, diffusion models, image editing with diffusion models, diffusion-based image editing, machine learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Addressing Attribute Leakages in Diffusion-based Image Editing without Training</title>
+  <title>Addressing Text Embedding Leakage in Diffusion-based Image Editing</title>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
 
@@ -66,8 +66,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Addressing Attribute Leakages in Diffusion-based Image Editing
-              without Training
+            <h1 class="title is-1 publication-title">Addressing Text Embedding Leakage in Diffusion-based Image Editing
             </h1>
             <!-- <p class="title is-4 publication-title">CVPR 2024</p> -->
             <div class="is-size-5 publication-authors">
@@ -80,6 +79,7 @@
 
             <div class="is-size-5 publication-authors">
               <span class="author-block">Pohang University of Science and Technology (POSTECH)</span>
+              <span class="publication-venue"><small><br>ICCV 2025</small></span>
               <span class="eql-cntrb"><small><br><sup>*</sup> Equal Contribuion</small></span>
             </div>
 
@@ -155,24 +155,27 @@
             <h2 class=" title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Diffusion models have become a cornerstone in image editing, offering flexibility with language
-                prompts and source images. However, a key challenge is attribute leakage, where unintended
-                modifications occur in non-target regions or within target regions due to attribute interference.
-                Existing methods often suffer from leakage due to naive text embeddings and inadequate handling of
-                End-of-Sequence (EOS) token embeddings.
-                To address this, we propose <strong>ALE-Edit</strong> (Attribute-leakage-free editing), a novel
-                framework to minimize
-                attribute leakage with three components:
-                (1) Object-Restricted Embeddings (ORE) to localize object-specific attributes in text embeddings,
-                (2) Region-Guided Blending for Cross-Attention Masking (RGB-CAM) to align attention with target
-                regions, and
-                (3) Background Blending (BB) to preserve non-edited regions.
-                Additionally, we introduce <strong>ALE-Bench</strong>, a benchmark for evaluating attribute leakage
-                with new metrics
-                for target-external and target-internal leakage.
-                Experiments demonstrate that our framework significantly reduces attribute leakage while maintaining
-                high editing quality, providing an efficient and tuning-free solution for multi-object image editing.
-                We will release the source code and benchmark.
+                Text-based image editing, powered by generative diffusion models, lets users modify images through
+                natural-language prompts and has dramatically simplified traditional workflows.
+                Despite these advances, current methods still suffer from a critical problem: <strong>attribute
+                  leakage</strong>,
+                where edits meant for specific objects unintentionally affect unrelated regions or other target objects.
+                Our analysis reveals the root cause as the semantic entanglement inherent in End-of-Sequence (EOS)
+                embeddings generated by autoregressive text encoders, which indiscriminately aggregate attributes across
+                prompts.
+                To address this issue, we introduce <strong>Attribute-Leakage-free Editing</strong> (ALE), a framework
+                that
+                tackles attribute leakage at its source.
+                ALE combines <strong>Object-Restricted Embeddings</strong> (ORE) to disentangle text embeddings,
+                <strong>Region-Guided Blending for Cross-Attention Masking</strong> (RGB-CAM) for spatially precise
+                attention, and
+                <strong>Background Blending</strong> (BB) to preserve non-edited content.
+                To quantitatively evaluate attribute leakage across various editing methods, we propose the
+                <strong>Attribute-Leakage Evaluation Benchmark</strong> (ALE-Bench), featuring comprehensive editing
+                scenarios
+                and new metrics.
+                Extensive experiments show that ALE reduces attribute leakage by large margins, thereby enabling
+                accurate, multi-object, text-driven image editing while faithfully preserving non-target content.
               </p>
             </div>
           </div>
@@ -184,13 +187,13 @@
   <section class="hero teaser" style="margin-bottom: 2rem; margin-top: 2rem">
     <div class="hero-body">
       <div class="container is-max-desktop has-text-centered">
-        <h2 class="title is-3">Comparison of ALE-Edit with Other Methods</h2>
+        <h2 class="title is-3">Comparison of ALE with Other Methods</h2>
 
         <div class="columns is-centered">
           <div class="column">
             <div class="juxtapose" data-startingposition="50%">
               <img src="./static/images/compare_others/color_object/artificial_img10.jpg" data-label="Source" />
-              <img src="./static/images/compare_others/color_object/ours_edit_7.png" data-label="ALE-Edit (Ours)" />
+              <img src="./static/images/compare_others/color_object/ours_edit_7.png" data-label="ALE (Ours)" />
             </div>
           </div>
           <div class="column">
@@ -236,7 +239,7 @@
             <div>
               <div class="juxtapose" data-startingposition="50%">
                 <img src="./static/images/compare_others/object/artificial_img04.jpg" data-label="Source" />
-                <img src="./static/images/compare_others/object/ours_edit_3.png" data-label="ALE-Edit (Ours)" />
+                <img src="./static/images/compare_others/object/ours_edit_3.png" data-label="ALE (Ours)" />
               </div>
             </div>
           </div>
@@ -282,7 +285,7 @@
           <div class="column">
             <div class="juxtapose" data-startingposition="50%">
               <img src="./static/images/compare_others/color/artificial_img06.jpg" data-label="Source" />
-              <img src="./static/images/compare_others/color/ours_edit_8.png" data-label="ALE-Edit (Ours)" />
+              <img src="./static/images/compare_others/color/ours_edit_8.png" data-label="ALE (Ours)" />
             </div>
           </div>
 
@@ -343,15 +346,18 @@
         <h2 class="title is-3 has-text-centered">Proposed Method: Attribute-Leakage-free Editing</h2>
         <div class="hero-body-center"><img src="./static/images/methods.png"></div>
         <h5 class=" subtitle is-6 has-text-justified">
-          The framework consists of two branches: the upper part (source branch) processes the source latent \(
-          z_{\tau}^S \),
-          and the lower part (target branch) processes the target latent \( z_{\tau}^T \) at each timestep \( \tau \).
+          The framework consists of two branches: the upper branch (source branch) processes the source latent \(
+          z_{\tau}^{\text{src}} \),
+          while the lower branch (target branch) processes the target latent \( z_{\tau}^{\text{tgt}} \) at each
+          timestep \(
+          \tau
+          \).
           The method comprises three key components: Object-Restricted Embeddings (ORE), Region-Guided Blending for
           Cross-Attention Masking (RGB-CAM), and Background Blending (BB).
           ORE generates attribute-leakage-free embeddings to minimize interference between unrelated objects.
-          RGB-CAM leverages segmentation masks from Grounded-SAM to refine cross-attention activations, aligning
-          attention to specific regions for each target object.
-          BB integrates the source latent for background regions and the target latent for edited regions.
+          RGB-CAM leverages segmentation masks from Grounded-SAM to refine cross-attention activations, ensuring
+          attention is focused on target regions for each target object.
+          BB composes the source latent for background regions and the target latent for edited regions.
         </h5>
       </div>
     </div>
@@ -364,35 +370,38 @@
         </h2>
         <div class="has-text-justified">
           <p>
-            <strong>ALE-Bench</strong> (Attribute Leakage Evaluation Benchmark) is a novel benchmark designed to
+            <strong>Attribute Leakage Evaluation Benchmark</strong> (ALE-Bench) is a new benchmark specifically designed
+            to
             evaluate attribute leakage.
-            It simulates real-world editing scenarios using succinct prompts and includes a total of 3,000 editing cases
-            with five editing types and varying numbers of objects.
+            It simulates real-world editing scenarios using succinct prompts and comprises 3,000 editing cases, covering
+            five editing types and different numbers of editing objects.
             <br>
-            To quantify attribute leakage, we introduce two key metrics.
+            To quantify attribute leakage, we introduce two key metrics:
           </p>
           <ul>
             <li>
-              <strong>Target-Internal (TI) Leakage</strong> measures unintended cross-influence between edited objects.
-              Lower TI values indicate edits are well-isolated to the intended objects:
+              <strong>Target-Internal Leakage Score (TILS)</strong> measures unintended cross-influence between edited
+              objects.
+              Lower TILS values indicate edits are well-isolated within the intended objects:
               <div class="has-text-centered" style="font-size: 1.5rem; padding: 1rem">
                 \(
-                \text{TI} = \frac{1}{N(N-1)}\sum_{i \not= j}^{N}
+                \text{TILS} = \frac{1}{N(N-1)}\sum_{i \not= j}^{N}
                 \text{CLIP} \left(
-                I_e \odot m_j, y_i^T
+                x_{\text{tgt}} \odot m_j, y_i^{\text{tgt}}
                 \right)
                 \label{eq/ti}.
                 \)
               </div>
             </li>
             <li>
-              <strong>Target-External (TE) Leakage</strong> quantifies unintended changes in non-edited areas, such as
-              the background. Lower TE values suggest that external areas remain unaffected by the edits:
+              <strong>Target-External Leakage Score (TELS)</strong> quantifies unintended changes in non-edited areas,
+              such as
+              the background. Lower TELS values indicate that background regions remain unaffected by the edits:
               <div class="has-text-centered" style="font-size: 1.5rem; padding: 1rem">
                 \(
-                \text{TE} = \frac{1}{N}\sum_{i=1}^{N}
+                \text{TELS} = \frac{1}{N}\sum_{i=1}^{N}
                 \text{CLIP}\left(
-                I_e \odot \left( \textbf{1} - \bigcup_{j=1}^{N}{m}_j\right), y_i^T
+                x_{\text{tgt}} \odot \left( \textbf{1} - \bigcup_{j=1}^{N}{m}_j\right), y_i^{\text{tgt}}
                 \right)
                 \label{eq/te},
                 \)
@@ -402,14 +411,14 @@
           <p>
             where CLIP is the CLIP similarity score,
             \(N\) is the number of objects to be edited,
-            \(I_e\) is the edited image,
+            \(x_{\text{tgt}} \) is the edited image,
             \({m}_j\) is the \(j\)-th object mask,
-            and \(y_i^T\) is the target prompt for \(i\)-th object.
+            and \(y_i^{\text{tgt}}\) is the target prompt for \(i\)-th object.
           </p>
         </div>
         <div class="hero-body-center" style="padding-bottom: 0rem; padding-top: 1rem"><img
             src="./static/images/ale_bench.png"></div>
-        <h2 class="title is-6 has-text-centered" style="margin-top: 0rem; margin-bottom: 1rem"> Examples of editing
+        <h2 class="title is-6 has-text-centered" style="margin-top: 0rem; margin-bottom: 1rem"> Example editing
           scenarios in ALE-Bench</h2>
       </div>
     </div>
@@ -418,14 +427,14 @@
   <section class="hero teaser ">
     <div class="container is-max-desktop" style="width: 100%;">
       <div class="hero-body">
-        <h2 class="title is-3 has-text-centered">Various Editing Results of ALE-Edit</h2>
+        <h2 class="title is-3 has-text-centered">Various Editing Results of ALE</h2>
         <!-- first row -->
         <div class="columns is-centered">
           <div class="column">
             <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj1_artificial_img07_hair.jpg" data-label="Source" />
-                <img src="./static/images/compare/obj1_artificial_img07_braided_hair.png" data-label="ALE-Edit" />
+                <img src="./static/images/compare/obj1_artificial_img07_braided_hair.png" data-label="ALE" />
               </div>
             </div>
             <div class="has-text-justified">
@@ -438,7 +447,7 @@
             <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj1_faker.jpg" data-label="Source" />
-                <img src="./static/images/compare/obj1_faker_black_sunglass.webp" data-label="ALE-Edit" />
+                <img src="./static/images/compare/obj1_faker_black_sunglass.webp" data-label="ALE" />
               </div>
             </div>
             <div class="has-text-justified">
@@ -451,7 +460,7 @@
             <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj1_bird_flower.jpg" data-label="Source" />
-                <img src="./static/images/compare/obj1_cotton_candy.png" data-label="ALE-Edit" />
+                <img src="./static/images/compare/obj1_cotton_candy.png" data-label="ALE" />
               </div>
             </div>
             <div class="has-text-justified">
@@ -468,7 +477,7 @@
             <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj2_turtle_green_lettuce.jpg" data-label="Source" />
-                <img src="./static/images/compare/obj2_tank_fire.png" data-label="ALE-Edit" />
+                <img src="./static/images/compare/obj2_tank_fire.png" data-label="ALE" />
               </div>
             </div>
             <div class="has-text-justified">
@@ -482,7 +491,7 @@
             <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj2_paprikas.jpg" data-label="Source" />
-                <img src="./static/images/compare/obj2_apple_cheese.png" data-label="ALE-Edit" />
+                <img src="./static/images/compare/obj2_apple_cheese.png" data-label="ALE" />
               </div>
             </div>
             <div class="has-text-justified">
@@ -496,7 +505,7 @@
             <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj2_cake.jpg" data-label="Source" />
-                <img src="./static/images/compare/obj2_chocolate_cake_plate.png" data-label="ALE-Edit" />
+                <img src="./static/images/compare/obj2_chocolate_cake_plate.png" data-label="ALE" />
               </div>
             </div>
             <div class="has-text-justified">
@@ -513,7 +522,7 @@
             <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj3_globe.jpg" data-label="Source" />
-                <img src="./static/images/compare/obj3_gold_moon.png" data-label="ALE-Edit" />
+                <img src="./static/images/compare/obj3_gold_moon.png" data-label="ALE" />
               </div>
             </div>
             <div class="has-text-justified">
@@ -528,7 +537,7 @@
             <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj3_wolf.jpg" data-label="Source" />
-                <img src="./static/images/compare/obj3_eagle.png" data-label="ALE-Edit" />
+                <img src="./static/images/compare/obj3_eagle.png" data-label="ALE" />
               </div>
             </div>
             <div class="has-text-justified">
@@ -543,7 +552,7 @@
             <div class="content" style="margin-bottom: 0.1rem;">
               <div class="juxtapose">
                 <img src="./static/images/compare/obj3_tree_couch.jpg" data-label="Source" />
-                <img src="./static/images/compare/obj3_christmas_snow.png" data-label="ALE-Edit" />
+                <img src="./static/images/compare/obj3_christmas_snow.png" data-label="ALE" />
               </div>
             </div>
             <div class="has-text-justified">
@@ -571,30 +580,26 @@
       <div class="hero-body">
         <h2 class="title is-3 has-text-centered">Results</h2>
         <h5 class="has-text-justified">
-          Our proposed method, ALE-Edit, demonstrates superior performance in attribute leakage control and image
-          editing quality compared to existing methods, as shown in the results below.
-          Specifically, our method achieves the lowest scores in both <strong>Target-External (TE)</strong> and
-          <strong>Target-Internal (TI)</strong> attribute leakage, ensuring precise edits limited to the specified
-          target regions.
-          CS represents CLIP Similarity, SD represents Structure Distance.
+          Our proposed method, ALE, demonstrates superior capability in attribute leakage control and image editing,
+          outperforming existing methods as summarized below.
         </h5>
 
         <div class="hero-body-center">
           <img src="./static/images/table1.png">
         </div>
-        <h5 class="title is-6 has-text-centered" style="margin-top: 0rem; margin-bottom: 1.5rem"> Performance comparison
+        <h5 class="title is-6 has-text-centered" style="margin-top: 0rem; margin-bottom: 1.5rem">Comparison of methods
           on ALE-Bench </h5>
         <div class="hero-body-center">
           <img src="./static/images/table2.png">
         </div>
-        <h5 class="title is-6 has-text-centered" style="margin-top: 0rem; margin-bottom: 1.5rem">Performance of ALE-Edit
-          across the number of editing objects</h5>
+        <h5 class="title is-6 has-text-centered" style="margin-top: 0rem; margin-bottom: 1.5rem">Performance of ALE with
+          varying numbers of editing objects</h5>
         <div class="hero-body-center">
           <img src="./static/images/table3.png">
         </div>
 
-        <h5 class="title is-6 has-text-centered" style="margin-top: 0rem; margin-bottom: 1.5rem">Performance of ALE-Edit
-          across editing types</h5>
+        <h5 class="title is-6 has-text-centered" style="margin-top: 0rem; margin-bottom: 1.5rem">Performance of ALE
+          across different editing types</h5>
       </div>
     </div>
     </div>
@@ -662,14 +667,12 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{mun2024leakage,
-        title={Addressing Attribute Leakages in Diffusion-based Image Editing without Training}, 
-        author={Mun, Sunung and Nam, Jinhwan and Cho, Sunghyun and Ok, Jungseul},
-        year={2024},
-        eprint={2412.04715},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV},
-        url={https://arxiv.org/abs/2412.04715}, 
+      <pre><code>@InProceedings{mun2025ale,
+    author    = {Mun, Sunung and Nam, Jinhwan and Cho, Sunghyun and Ok, Jungseul},
+    title     = {Addressing Text Embedding Leakage in Diffusion-based Image Editing},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    year      = {2025},
+    url       = {https://arxiv.org/abs/2412.04715},
   }</code></pre>
     </div>
   </section>
